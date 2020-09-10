@@ -3,7 +3,7 @@ function openFormCadastro(){
 }
 
 function cancelCadastro(){
-   window.location = "index.html";
+   window.location = "login.html";
 }
 
 function submitFormCadastro(e){

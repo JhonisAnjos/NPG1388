@@ -10,4 +10,6 @@ public interface IUsuarioDAO {
 
 	void salvar(Usuario usuario);
 
+	Usuario getUsuario(String email, String senha);
+
 }

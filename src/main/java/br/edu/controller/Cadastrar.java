@@ -37,9 +37,12 @@ public class Cadastrar extends HttpServlet {
 		IUsuarioDAO usuarioDAO = DAOFactory.getUsuarioDAO();
 		usuarioDAO.salvar(usuario);
 		
-		RequestDispatcher rd = request
-				.getRequestDispatcher("/WEB-INF/index.html");
-		rd.forward(request, response);
+//		RequestDispatcher rd = request
+//				.getRequestDispatcher("/publico/login.html");
+//		rd.forward(request, response);
+		
+		((HttpServletResponse) response)
+		.sendRedirect(((HttpServletRequest) request).getContextPath() + "/publico/login.html");
 		
 	}
 

@@ -36,7 +36,7 @@
 		<ul class="collapsible" data-collapsible="accordion">
 			<li id="dash_users">
 				<div id="dash_users_header" class="collapsible-header waves-effect">
-					<b>Users</b>
+					<b>Usuários</b>
 				</div>
 				<div id="dash_users_body" class="collapsible-body">
 					<ul>
@@ -136,7 +136,7 @@
 			<div style="padding: 35px;" align="center" class="card">
 				<div class="row">
 					<div class="left card-title">
-						<b>User Management</b>
+						<b>Gerenciamento de Usuários</b>
 					</div>
 				</div>
 
@@ -166,7 +166,7 @@
 			<div style="padding: 35px;" align="center" class="card">
 				<div class="row">
 					<div class="left card-title">
-						<b>Product Management</b>
+						<b>Gerenciamento 2(a definir)</b>
 					</div>
 				</div>
 				<div class="row">
@@ -198,7 +198,7 @@
 			<div style="padding: 35px;" align="center" class="card">
 				<div class="row">
 					<div class="left card-title">
-						<b>Brand Management</b>
+						<b>Gerenciamento 3(a definir)</b>
 					</div>
 				</div>
 
@@ -230,7 +230,7 @@
 			<div style="padding: 35px;" align="center" class="card">
 				<div class="row">
 					<div class="left card-title">
-						<b>Category Management</b>
+						<b>Gerenciamento 4(a definir)</b>
 					</div>
 				</div>
 				<div class="row">
@@ -287,7 +287,7 @@
 					<h5 class="white-text">Sobre</h5>
 					<ul id='credits'>
 						<li> Projeto para fins acadêmicos, disponível no<a
-							href="https://github.com/romannurik/FORMTypeMaker">, GitHub</a>
+							href="https://github.com/JhonisAnjos/NPG1388">, GitHub</a>
 						</li>
 					</ul>
 				</div>

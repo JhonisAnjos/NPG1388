@@ -42,7 +42,7 @@ public class Cadastrar extends HttpServlet {
 //		rd.forward(request, response);
 		
 		((HttpServletResponse) response)
-		.sendRedirect(((HttpServletRequest) request).getContextPath() + "/publico/login.html");
+		.sendRedirect(((HttpServletRequest) request).getContextPath() + "/publico/login.jsp?hello=1");
 		
 	}
 

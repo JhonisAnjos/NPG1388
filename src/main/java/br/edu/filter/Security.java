@@ -28,7 +28,7 @@ public class Security implements Filter {
 		
 		String url = ((HttpServletRequest) request).getRequestURI();
 		
-		if(url.equals(((HttpServletRequest) request).getContextPath()+"/publico/login.html")){
+		if(url.equals(((HttpServletRequest) request).getContextPath()+"/publico/login.jsp")){
 			chain.doFilter(request, response);
 		}else{
 			Optional<Usuario> usuario = Optional
@@ -37,7 +37,7 @@ public class Security implements Filter {
 				chain.doFilter(request, response);
 			} else {
 				((HttpServletResponse) response)
-				.sendRedirect(((HttpServletRequest) request).getContextPath() + "/publico/login.html");
+				.sendRedirect(((HttpServletRequest) request).getContextPath() + "/publico/login.jsp");
 			}
 		}
 		

@@ -47,7 +47,7 @@ public class Entrar extends HttpServlet {
 //			rd.forward(request, response);
 			
 			((HttpServletResponse) response)
-			.sendRedirect(((HttpServletRequest) request).getContextPath() + "/restrito/index.html");
+			.sendRedirect(((HttpServletRequest) request).getContextPath() + "/restrito/pagina-principal.jsp");
 			
 		}else{
 //			RequestDispatcher rd = request
@@ -55,7 +55,7 @@ public class Entrar extends HttpServlet {
 //			rd.forward(request, response);
 			
 			((HttpServletResponse) response)
-			.sendRedirect(((HttpServletRequest) request).getContextPath() + "/publico/login.html");
+			.sendRedirect(((HttpServletRequest) request).getContextPath() + "/publico/login.jsp?error=1");
 		}
 		
 	}

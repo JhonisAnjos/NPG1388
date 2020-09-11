@@ -1,8 +1,10 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!doctype html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
-    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
@@ -12,16 +14,8 @@
     <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/sign-in/">
 
     <!-- Bootstrap core CSS -->
-    <link href="/docs/4.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
-    <!-- Favicons -->
-    <link rel="apple-touch-icon" href="/docs/4.5/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
-    <link rel="icon" href="/docs/4.5/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
-    <link rel="icon" href="/docs/4.5/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
-    <link rel="manifest" href="/docs/4.5/assets/img/favicons/manifest.json">
-    <link rel="mask-icon" href="/docs/4.5/assets/img/favicons/safari-pinned-tab.svg" color="#563d7c">
-    <link rel="icon" href="/docs/4.5/assets/img/favicons/favicon.ico">
-    <meta name="msapplication-config" content="/docs/4.5/assets/img/favicons/browserconfig.xml">
+ 
     <meta name="theme-color" content="#563d7c">
 
 
@@ -47,8 +41,8 @@
 </head>
 
 <body class="text-center">
-    <form class="form-signin" onclick="submitFormCadastro(event)" method="post" enctype="application/x-www-form-urlencoded" id="formCadastro" action="../Cadastrar">
-        <img class="mb-4" src="..\resource\img\login.png" alt="" width="72" height="72">
+    <form class="form-signin"  method="post" enctype="application/x-www-form-urlencoded" id="formCadastro" action="../Cadastrar">
+        <img class="mb-4" src="..\resource\img\login.png" alt="" width="72" height="72" style="border-radius: 34px;">
         <h1 class="h3 mb-3 font-weight-normal">Cadastre-se</h1>
 
         <input type="text" class="form-control" id="nome" name="nome" required  placeholder="Nome" >
@@ -60,14 +54,14 @@
         <label for="inputPassword"  class="sr-only">Password Confirm</label>
         <input type="password" id="inputPasswordConfirm"  class="form-control" placeholder="Confirmar senha" required>
         <div class="checkbox mb-3">
-            <label id="msg">
-
-            </label>
+            <label id="msg" style="color: red;"/>
         </div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Finalizar</button>
+        <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="submitFormCadastro(event)">Finalizar</button>
         <button class="btn btn-lg btn-primary btn-block" type="button" onclick="cancelCadastro()">Cancelar</button>
         <p class="mt-5 mb-3 text-muted">&copy; 2020</p>
     </form>
+    
+    
 
 
 </body>
@@ -77,5 +71,6 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
 
 </html>

@@ -25,7 +25,7 @@ public class Sair extends HttpServlet {
         request.getSession().invalidate();
         
         ((HttpServletResponse) response)
-		.sendRedirect(((HttpServletRequest) request).getContextPath() + "/publico/login.html");
+		.sendRedirect(((HttpServletRequest) request).getContextPath() + "/publico/login.jsp");
 	}
 
 

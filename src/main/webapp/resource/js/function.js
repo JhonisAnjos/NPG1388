@@ -1,9 +1,9 @@
 function openFormCadastro(){
-    window.location = "cadastro.html";
+    window.location = "cadastro.jsp";
 }
 
 function cancelCadastro(){
-   window.location = "login.html";
+   window.location = "login.jsp";
 }
 
 function submitFormCadastro(e){
@@ -12,7 +12,7 @@ function submitFormCadastro(e){
     let senhaConfirm = document.getElementById("inputPasswordConfirm").value;
     if(senha !== senhaConfirm){
         console.log("aqui");
-        msg.innerHTML = "Senhas não conferem";
+        msg.innerHTML = "Senhas não conferem!";
         e.preventDefault();
     }
 }

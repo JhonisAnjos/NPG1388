@@ -1,23 +1,11 @@
-package br.edu.dao;
+package br.edu.dao.impl;
 
-import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
+import br.edu.dao.IUsuarioDAO;
 import br.edu.domain.Usuario;
 
-public class UsuarioDAO implements IUsuarioDAO {
-
-	private EntityManager entityManager;
-
-	@Override
-	public void setEntityManager(EntityManager entityManager) {
-		this.entityManager = entityManager;
-	}
-
-	@Override
-	public void salvar(Usuario usuario) {
-		this.entityManager.persist(usuario);
-	}
+public class UsuarioDAO extends AbstractDAO<Usuario, Integer> implements IUsuarioDAO {
 
 	@Override
 	public Usuario getUsuario(String email, String senha) {

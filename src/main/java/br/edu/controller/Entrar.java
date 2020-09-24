@@ -47,7 +47,7 @@ public class Entrar extends HttpServlet {
 //			rd.forward(request, response);
 			
 			((HttpServletResponse) response)
-			.sendRedirect(((HttpServletRequest) request).getContextPath() + "/restrito/pagina-principal.jsp");
+			.sendRedirect(((HttpServletRequest) request).getContextPath() + "/");
 			
 		}else{
 //			RequestDispatcher rd = request

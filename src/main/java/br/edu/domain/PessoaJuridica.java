@@ -2,6 +2,7 @@ package br.edu.domain;
 
 import java.io.Serializable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -17,14 +18,10 @@ public abstract class PessoaJuridica implements Serializable{
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
-	
-	@ManyToOne
-	@JoinColumn(name="cidade_id")
-	private Cidade cidade;
-	
+
 	private String nome;
 
-	@ManyToOne
+	@ManyToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name="endereco_id")
 	private Endereco endereco;
 		
@@ -35,6 +32,21 @@ public abstract class PessoaJuridica implements Serializable{
 	private String inscricaoEstadual;
 	
 	private String cnpj;
+	
+	public PessoaJuridica() {
+	}
+	
+	public PessoaJuridica(String nome, Endereco endereco, String telefone, String email, String inscricaoEstadual,
+			String cnpj) {
+		super();
+		this.nome = nome;
+		this.endereco = endereco;
+		this.telefone = telefone;
+		this.email = email;
+		this.inscricaoEstadual = inscricaoEstadual;
+		this.cnpj = cnpj;
+	}
+
 
 	public Integer getId() {
 		return id;
@@ -42,14 +54,6 @@ public abstract class PessoaJuridica implements Serializable{
 
 	public void setId(Integer id) {
 		this.id = id;
-	}
-
-	public Cidade getCidade() {
-		return cidade;
-	}
-
-	public void setCidade(Cidade cidade) {
-		this.cidade = cidade;
 	}
 
 	public String getNome() {

@@ -6,6 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -23,6 +25,25 @@ public class Endereco implements Serializable{
 	private String numero;
 	
 	private String bairro;
+	
+	public Endereco() {
+	}
+	
+	
+	
+	public Endereco(String logradouro, String numero, String bairro, Cidade cidade) {
+		super();
+		this.logradouro = logradouro;
+		this.numero = numero;
+		this.bairro = bairro;
+		this.cidade = cidade;
+	}
+
+
+
+	@ManyToOne
+	@JoinColumn(name="cidade_id")
+	private Cidade cidade;
 
 	public Integer getId() {
 		return id;
@@ -54,6 +75,15 @@ public class Endereco implements Serializable{
 
 	public void setBairro(String bairro) {
 		this.bairro = bairro;
+	}
+
+	
+	public Cidade getCidade() {
+		return cidade;
+	}
+
+	public void setCidade(Cidade cidade) {
+		this.cidade = cidade;
 	}
 
 	@Override

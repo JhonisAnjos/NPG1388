@@ -9,21 +9,23 @@ import br.edu.dao.impl.UsuarioDAO;
 
 public class DAOFactory {
 
+	private static JPAUtil jpaUtil = JPAUtil.getInstance();
+	
 	public static IUsuarioDAO getUsuarioDAO() {
 		UsuarioDAO dao = new UsuarioDAO();
-		dao.setEntityManager(JPAUtil.getEntityManager());
+		dao.setEntityManager(jpaUtil.getEntityManager());
 		return dao;
 	}
 	
 	public static IFornecedorDAO getFornecedorDAO() {
 		FornecedorDAO dao = new FornecedorDAO();
-		dao.setEntityManager(JPAUtil.getEntityManager());
+		dao.setEntityManager(jpaUtil.getEntityManager());
 		return dao;
 	}
 	
 	public static ICidadeDAO getCidadeDAO() {
 		CidadeDAO dao = new CidadeDAO();
-		dao.setEntityManager(JPAUtil.getEntityManager());
+		dao.setEntityManager(jpaUtil.getEntityManager());
 		return dao;
 	}
 }

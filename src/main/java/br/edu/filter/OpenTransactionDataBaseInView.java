@@ -17,6 +17,8 @@ import br.edu.util.JPAUtil;
 @WebFilter(urlPatterns="/*")
 public class OpenTransactionDataBaseInView implements Filter {
 	
+	private JPAUtil jpaUtil = JPAUtil.getInstance();
+	
 	@Override
 	public void init(FilterConfig filterConfig) throws ServletException {
 	}
@@ -24,7 +26,7 @@ public class OpenTransactionDataBaseInView implements Filter {
 	@Override
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
 			throws IOException, ServletException {
-		EntityManager em = JPAUtil.getEntityManager();
+		EntityManager em = this.jpaUtil.getEntityManager();
 		EntityTransaction tx = em.getTransaction();
 		try {
 			if(!tx.isActive()){
@@ -44,6 +46,6 @@ public class OpenTransactionDataBaseInView implements Filter {
 
 	@Override
 	public void destroy() {
-		JPAUtil.closeEntityManager();
+		this.jpaUtil.closeEntityManager();
 	}
 }

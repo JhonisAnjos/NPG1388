@@ -1,11 +1,11 @@
-<%@ page language="java" contentType="text/html; UTF-8"
+<%@ page language="java" contentType="text/html; ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <c:set var="tituloDaPagina" value="LISTA DE LOJAS" scope="request" />
 <c:import url="/restrito/template/cabecalho.jsp" />
 <main>
-<table class="highlight">
+<table class="highlight" id="tb">
 	<thead>
 		<tr>
 			<th>Nome</th>

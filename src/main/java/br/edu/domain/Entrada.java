@@ -43,6 +43,22 @@ public class Entrada implements Serializable{
 	private Integer numeroNotaFiscal;
 	
 	private Double imposto;
+	
+	public Entrada(){
+	}
+
+	public Entrada(Transportadora transportadora, Date dataPedido, Date dataEntrada, Double total, Double frete,
+			Integer numeroNotaFiscal, Double imposto) {
+		super();
+		this.transportadora = transportadora;
+		this.dataPedido = dataPedido;
+		this.dataEntrada = dataEntrada;
+		this.total = total;
+		this.frete = frete;
+		this.numeroNotaFiscal = numeroNotaFiscal;
+		this.imposto = imposto;
+	}
+
 
 	public Integer getId() {
 		return id;

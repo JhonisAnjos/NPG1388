@@ -9,18 +9,18 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import br.edu.dao.ICidadeDAO;
-import br.edu.dao.IFornecedorDAO;
+import br.edu.dao.ILojaDAO;
 import br.edu.domain.Cidade;
 import br.edu.domain.Endereco;
-import br.edu.domain.Fornecedor;
+import br.edu.domain.Loja;
 import br.edu.util.DAOFactory;
 
 
-@WebServlet("/salvarFornecedor")
-public class SalvarFornecedor extends HttpServlet {
+@WebServlet("/restrito/salvarLoja")
+public class SalvarLoja extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-    public SalvarFornecedor() {
+    public SalvarLoja() {
         super();
     }
 
@@ -46,13 +46,13 @@ public class SalvarFornecedor extends HttpServlet {
 		Cidade cidade = cidadeDAO.buscarPorId(Cidade.class, cidadeId);
 		
 		Endereco endereco = new Endereco(logradouro, numero, bairro, cidade);
-		Fornecedor fornecedor = new Fornecedor(nome, endereco, telefone, email, inscricaoEstadual, cnpj);
+		Loja loja = new Loja(nome, endereco, telefone, email, inscricaoEstadual, cnpj);
 		
-		IFornecedorDAO fornecedorDAO = DAOFactory.getFornecedorDAO();
-		fornecedorDAO.salvar(fornecedor);
+		ILojaDAO lojaDAO = DAOFactory.getLojaDAO();
+		lojaDAO.salvar(loja);
 		
 		((HttpServletResponse) response)
-		.sendRedirect(((HttpServletRequest) request).getContextPath() + "/listarFornecedores");
+		.sendRedirect(((HttpServletRequest) request).getContextPath() + "/restrito/listarLojas");
 		
 	}
 

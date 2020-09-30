@@ -34,10 +34,10 @@ public class Cadastrar extends HttpServlet {
 		String senha = request.getParameter("senha");
 		
 		Usuario usuario = new Usuario(nome, cpf, email, senha);
-		AbstractDAO<Usuario, Integer> usuarioDAO;
+		AbstractDAO usuarioDAO;
 		try {
-			usuarioDAO = new DAOFactory().createDAO(Usuario.class);
-			usuarioDAO.salvar(usuario);
+			AbstractDAO<Usuario,Integer> dao=(AbstractDAO<Usuario,Integer>) new DAOFactory().createDAO(Usuario.class);
+			dao.salvar(usuario);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

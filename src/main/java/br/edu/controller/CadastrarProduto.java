@@ -10,28 +10,34 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import br.edu.dao.ICidadeDAO;
-import br.edu.domain.Cidade;
+import br.edu.dao.ICategoriaDAO;
+import br.edu.dao.IFornecedorDAO;
+import br.edu.domain.Categoria;
+import br.edu.domain.Fornecedor;
 import br.edu.util.DAOFactory;
 
 
-@WebServlet( urlPatterns = { "/cadastrarFornecedor" })
-public class CadastrarFornecedor extends HttpServlet {
+@WebServlet( urlPatterns = { "/restrito/cadastrarProduto" })
+public class CadastrarProduto extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	public CadastrarFornecedor() {
+	public CadastrarProduto() {
 		super();
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		ICidadeDAO cidadeDAO = DAOFactory.getCidadeDAO();
-		List<Cidade> cidades= cidadeDAO.buscarTodos();
+		ICategoriaDAO categoriaDAO= DAOFactory.getCategoriaDAO();
+		List<Categoria> categorias= categoriaDAO.buscarTodos();
+		
+		IFornecedorDAO fornecedorDAO = DAOFactory.getFornecedorDAO();
+		List<Fornecedor> fornecedores = fornecedorDAO.buscarTodos();
 
-		request.setAttribute("cidades", cidades);
+		request.setAttribute("categorias", categorias);
+		request.setAttribute("fornecedores", fornecedores);
 
 		 RequestDispatcher rd = request
-		 .getRequestDispatcher("/restrito/teste.jsp");
+		 .getRequestDispatcher("/restrito/cadastrarProduto.jsp");
 		 rd.forward(request, response);
 	}
 

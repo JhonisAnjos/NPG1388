@@ -15,11 +15,11 @@ import br.edu.domain.Cidade;
 import br.edu.util.DAOFactory;
 
 
-@WebServlet( urlPatterns = { "/cadastrarFornecedor" })
-public class CadastrarFornecedor extends HttpServlet {
+@WebServlet( urlPatterns = { "/restrito/cadastrarLoja" })
+public class CadastrarLoja extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	public CadastrarFornecedor() {
+	public CadastrarLoja() {
 		super();
 	}
 
@@ -31,7 +31,7 @@ public class CadastrarFornecedor extends HttpServlet {
 		request.setAttribute("cidades", cidades);
 
 		 RequestDispatcher rd = request
-		 .getRequestDispatcher("/restrito/teste.jsp");
+		 .getRequestDispatcher("/restrito/cadastrarLoja.jsp");
 		 rd.forward(request, response);
 	}
 

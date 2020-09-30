@@ -1,10 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; UTF-8"
+	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<c:set var="tituloDaPagina" value="CADASTRAR FORNECEDOR" scope="request" />
+<c:set var="tituloDaPagina" value="CADASTRAR TRANSPORTADORA" scope="request" />
 <c:import url="/restrito/template/cabecalho.jsp" />
 <main>
-<form class="col s12" action="salvarFornecedor" method="post" >
+<form class="col s12" action="salvarTransportadora" method="post" >
 	<div class="row">
 	</div>
 	<div class="row">
@@ -25,7 +25,7 @@
 		<div class="row">
 			<div class="input-field col s4">
 				<input id="last_name" name="inscricaoEstadual" type="text" class="validate"> <label
-					for="last_name">InscriÃ§Ã£o Estadual</label>
+					for="last_name">Inscrição Estadual</label>
 			</div>
 			<div class="input-field col s4">
 				<input id="last_name" required="required" name="cnpj" type="text" class="validate"> <label
@@ -49,7 +49,7 @@
 			</div>
 			<div class="input-field col s2">
 				<input id="last_name" name="numero" type="text" class="validate"> <label
-					for="last_name">NÃºmero</label>
+					for="last_name">Número</label>
 			</div>
 		</div>
 		<div class="row">
@@ -66,9 +66,4 @@
 	</div>
 </form>
 </main>
-<script type="text/javascript">
-// 	$(document).ready(function() {
-// 		$('select').material_select();
-// 	});
-</script>
 <c:import url="/restrito/template/rodape.jsp" />

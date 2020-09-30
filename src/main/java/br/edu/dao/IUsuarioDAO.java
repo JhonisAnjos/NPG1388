@@ -4,11 +4,11 @@ import javax.persistence.EntityManager;
 
 import br.edu.domain.Usuario;
 
-public interface IUsuarioDAO {
+public interface IUsuarioDAO extends IAbstractDAO<Usuario, Integer> {
 
 	void setEntityManager(EntityManager entityManager);
 
-	void salvar(Usuario usuario);
+	
 
 	Usuario getUsuario(String email, String senha);
 

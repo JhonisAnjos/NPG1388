@@ -1,7 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; UTF-8"
+	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!doctype html>
+<html lang="en">
 <head>
+<meta charset="utf-8">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/font/material-design-icons/Material-Design-Icons.woff" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css" rel="stylesheet">
@@ -9,11 +12,11 @@
 
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
-<script src="${pageContext.request.contextPath}\resource\js\template.js"></script>
 
 </head>
 
 <body>
+<script src="${pageContext.request.contextPath}\resource\js\template.js"></script>
 	<ul id="slide-out" class="side-nav fixed z-depth-2">
 		<li class="center no-padding">
 			<div class="indigo darken-2 white-text" style="height: 180px;">
@@ -22,12 +25,12 @@
 						src="${pageContext.request.contextPath}\resource\img\img_avatar.jpeg"
 						class="circle responsive-img" />
 
-					<p style="margin-top: 0%;">${sessionScope.usuario.nome}</p>
+					<p style="margin-top: -15%;;">${sessionScope.usuario.nome}</p>
 				</div>
 			</div>
 		</li>
 
-		<li id="dash_dashboard"><a class="waves-effect" href="#!"><b>PÃ¡gina Principal</b></a></li>
+		<li id="dash_dashboard"><a class="waves-effect" href="#!"><b>Página Principal</b></a></li>
 
 		<ul class="collapsible" data-collapsible="accordion">
 			<li id="dash_users">
@@ -53,8 +56,8 @@
 				<div id="dash_products_body" class="collapsible-body">
 					<ul>
 						<li id="products_product"><a class="waves-effect"
-							style="text-decoration: none;" href="#!">Cadastrar</a> <a
-							class="waves-effect" style="text-decoration: none;" href="#!">Listar</a>
+							style="text-decoration: none;" href="${pageContext.request.contextPath}\restrito\cadastrarTransportadora">Cadastrar</a> <a
+							class="waves-effect" style="text-decoration: none;" href="${pageContext.request.contextPath}\restrito\listarTransportadoras">Listar</a>
 						</li>
 					</ul>
 				</div>
@@ -68,10 +71,10 @@
 				<div id="dash_categories_body" class="collapsible-body">
 					<ul>
 						<li id="categories_category"><a class="waves-effect"
-							style="text-decoration: none;" href="#!">Cadastrar</a></li>
+							style="text-decoration: none;" href="${pageContext.request.contextPath}\restrito\cadastrarLoja" >Cadastrar</a></li>
 
 						<li id="categories_sub_category"><a class="waves-effect"
-							style="text-decoration: none;" href="#!">Listar</a></li>
+							style="text-decoration: none;" href="${pageContext.request.contextPath}\restrito\listarLojas">Listar</a></li>
 					</ul>
 				</div>
 			</li>

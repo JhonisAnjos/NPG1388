@@ -1,4 +1,4 @@
-package br.edu.dao.impl;
+package br.edu.dao;
 
 import java.util.List;
 

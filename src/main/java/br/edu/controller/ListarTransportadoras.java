@@ -10,28 +10,28 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import br.edu.dao.ICidadeDAO;
-import br.edu.domain.Cidade;
+import br.edu.dao.ITransportadoraDAO;
+import br.edu.domain.Transportadora;
 import br.edu.util.DAOFactory;
 
 
-@WebServlet( urlPatterns = { "/cadastrarFornecedor" })
-public class CadastrarFornecedor extends HttpServlet {
+@WebServlet( urlPatterns = { "/restrito/listarTransportadoras" })
+public class ListarTransportadoras extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	public CadastrarFornecedor() {
+	public ListarTransportadoras() {
 		super();
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		ICidadeDAO cidadeDAO = DAOFactory.getCidadeDAO();
-		List<Cidade> cidades= cidadeDAO.buscarTodos();
+		ITransportadoraDAO transportadoraDAO = DAOFactory.getTransportadoraDAO();
+		List<Transportadora> transportadoras = transportadoraDAO.buscarTodos();
 
-		request.setAttribute("cidades", cidades);
+		request.setAttribute("transportadoras", transportadoras);
 
 		 RequestDispatcher rd = request
-		 .getRequestDispatcher("/restrito/teste.jsp");
+		 .getRequestDispatcher("/restrito/listarTransportadoras.jsp");
 		 rd.forward(request, response);
 	}
 

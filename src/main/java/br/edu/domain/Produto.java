@@ -37,6 +37,22 @@ public class Produto implements Serializable{
 	
 	@Column(name="qtdemin")
 	private Integer quantidadeMinima;
+	
+	public Produto() {
+	}
+
+	public Produto(String nome, Categoria categoria, Fornecedor fornecedor, Double peso, Boolean controlado,
+			Integer quantidadeMinima) {
+		super();
+		this.nome = nome;
+		this.categoria = categoria;
+		this.fornecedor = fornecedor;
+		this.peso = peso;
+		this.controlado = controlado;
+		this.quantidadeMinima = quantidadeMinima;
+	}
+
+
 
 	public Integer getId() {
 		return id;

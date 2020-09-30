@@ -1,12 +1,25 @@
-$('.button-collapse').sideNav();
-
-$('.collapsible').collapsible();
-
-$('select').material_select();
 
 function atualizarId(id) {
 	this.id = id;
 	$('#deleteModal').openModal();
+}
+
+function excluirTransportadora(){
+	$.post("excluirTransportadora", {'id' : id}, function(resposta) {
+		$("#transportadora_" + id).hide();
+	});
+}
+
+function excluirLoja(){
+	$.post("excluirLoja", {'id' : id}, function(resposta) {
+		$("#loja_" + id).hide();
+	});
+}
+
+function excluirProduto(){
+	$.post("excluirProduto", {'id' : id}, function(resposta) {
+		$("#produto_" + id).hide();
+	});
 }
 
 function excluirFornecedor(){
@@ -14,3 +27,10 @@ function excluirFornecedor(){
 		$("#fornecedor_" + id).hide();
 	});
 }
+
+$(document).ready(function() {
+	$('select').material_select();
+	$('.button-collapse').sideNav();
+	$('.collapsible').collapsible();
+	
+});

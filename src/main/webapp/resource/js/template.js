@@ -11,6 +11,40 @@ function atualizarId(id) {
 	$('#deleteModal').openModal();
 }
 
+function adicionarProduto() {
+	$('#addModal').openModal();
+}
+
+function inserirProduto() {
+	var produtoId = $('#produtoId').val();
+	var produtoNome = $('#produtoId option:selected').text();
+	var lote = $('#lote').val();
+	var quantidade = $('#quantidade').val();
+	var valor= $('#valor').val();
+	
+	 console.log(produtoId);
+	 console.log(produtoNome);
+	 $('#tb').append(
+				'<tr id=produto_'+produtoId+'>'+
+				'<td>'+ produtoId +'</td>'+
+				'<td>'+ produtoNome+'</td>'+
+				'<td>'+ lote+'</td>'+
+				'<td>'+ quantidade +'</td>'+
+				'<td>'+ valor +'</td>'+
+				'<td><a '+
+					'href="#!" onclick="removerProduto(this)" class="delete" data-toggle="modal"><i class="material-icons"'+
+					'data-toggle="tooltip" data-id="1" title="Remover">&#xE872;</i></a></td></tr>'
+		
+	);
+	 $('#formDialog')[0].reset();
+//	 $('#formDialog').trigger("reset");
+}
+
+function removerProduto(ctl) {
+    $(ctl).parents("tr").remove();
+}
+
+
 function excluirTransportadora(){
 	$.post("excluirTransportadora", {'id' : id}, function(resposta) {
 		$("#transportadora_" + id).hide();
@@ -56,25 +90,25 @@ function sendjsonarraytoservlet(){
 	
 
 	 }
-//	 $.post(‘/context/restmethod’, { “arrayparams”: JSON.stringify(selected)},
+// $.post(‘/context/restmethod’, { “arrayparams”: JSON.stringify(selected)},
 //
-//	function(returnedData){
-//	         console.log(returnedData);
-//	}).fail(function(){
-//	     console.log(“error”);
-//	});
+// function(returnedData){
+// console.log(returnedData);
+// }).fail(function(){
+// console.log(“error”);
+// });
 
 }
 
 var selected = [];
 
-//var table = $('#tb');
+// var table = $('#tb');
 //
-//table.find('tr').each(function(indice){
-//    $(this).find('td').each(function(indice){
-//        selected.push(this.innerHTML);
-//    });
-//});
+// table.find('tr').each(function(indice){
+// $(this).find('td').each(function(indice){
+// selected.push(this.innerHTML);
+// });
+// });
 
 function popularSelected() {
 	
@@ -88,11 +122,11 @@ function popularSelected() {
 		selected.push(loja);
 });
 	
-//	table.find('tr').each(function(indice){
-//  $(this).find('td').each(function(indice){
-//      selected.push(this.innerHTML);
-//  });
-//});
+// table.find('tr').each(function(indice){
+// $(this).find('td').each(function(indice){
+// selected.push(this.innerHTML);
+// });
+// });
 	
 }
 

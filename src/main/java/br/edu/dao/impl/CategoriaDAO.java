@@ -11,7 +11,6 @@ public class CategoriaDAO extends AbstractDAO<Categoria, Integer> implements ICa
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Categoria> buscarTodos(){
-		return entityManager.createQuery("SELECT c FROM " + Categoria.class.getSimpleName() + " c "
-				+ "WHERE c.uf='BA'").getResultList();
+		return entityManager.createQuery("SELECT c FROM " + Categoria.class.getSimpleName() + " c ").getResultList();
 	}
 }

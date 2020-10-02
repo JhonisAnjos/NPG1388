@@ -124,7 +124,7 @@
 
 						<li id="brands_sub_brand"><a class="waves-effect"
 							style="text-decoration: none;"
-							href="${pageContext.request.contextPath}\restrito\listarProduto">Listar</a></li>
+							href="${pageContext.request.contextPath}\restrito\listarProdutos">Listar</a></li>
 					</ul>
 				</div>
 			</li>

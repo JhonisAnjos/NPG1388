@@ -33,6 +33,18 @@ public class ItemEntrada implements Serializable{
 	private Integer quantidade;
 	
 	private Double valor;
+	
+	public ItemEntrada(){
+	}
+	
+	public ItemEntrada(Produto produto, Entrada entrada, String lote, Integer quantidade, Double valor) {
+		super();
+		this.produto = produto;
+		this.entrada = entrada;
+		this.lote = lote;
+		this.quantidade = quantidade;
+		this.valor = valor;
+	}
 
 	public Integer getId() {
 		return id;

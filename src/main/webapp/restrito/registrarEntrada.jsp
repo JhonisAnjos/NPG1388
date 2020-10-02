@@ -1,18 +1,23 @@
 <%@ page language="java" contentType="text/html; UTF-8"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<c:set var="tituloDaPagina" value="CADASTRAR PRODUTO" scope="request" />
+<c:set var="tituloDaPagina" value="REGISTRAR ENTRADA" scope="request" />
 <c:import url="/restrito/template/cabecalho.jsp" />
 <main>
-<form class="col s12" action="#!" method="post" onsubmit="alert('aubmjnjn')">
-	<div class="row"></div>
+<form class="col s12" action="salvarEntrada" method="post" onsubmit="converterTabelaJson()">
+	<div class="row">
+		<c:if test="${!empty param.error}">
+			<div class="alert alert-danger" role="alert">Credenciais
+				inválidas!</div>
+		</c:if>
+	</div>
 	<div class="row">
 		<div class="row">
 			<div class="input-field col s6">
-				<select name="produtoId" required="required">
+				<select name="transportadoraId" required="required">
 					<option value="" disabled selected>Selecione</option>
-					<c:forEach var="produto" items="${produtos}" varStatus="id">
-						<option value="${produto.id}">${produto.nome}</option>
+					<c:forEach var="transportadora" items="${transportadoras}" varStatus="id">
+						<option value="${transportadora.id}">${transportadora.nome}</option>
 					</c:forEach>
 				</select> <label>Transportadora</label>
 			</div>
@@ -58,6 +63,7 @@
 			</div>
 		</div>
 	</div>
+	<input type="hidden" name="itensEntrada" id="itensEntrada">
 	<table class="highlight" id="tb">
 		<thead>
 			<tr>

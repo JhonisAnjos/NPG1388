@@ -5,6 +5,32 @@ class Loja {
 	}
 }
 
+var selected = [];
+
+var itemEntradaArray= [];
+
+class ItemEntrada{
+	constructor(produtoId, lote, quantidade, valor)
+	{
+		this.produtoId = produtoId;
+		this.lote = lote;
+		this.quantidade = quantidade;
+		this.valor=valor;
+	}
+}
+
+function converterTabelaJson(){
+	var table = $('#tb > tbody');
+	
+	table.find('tr').each(function(indice){
+		
+	var itemEntrada  = new ItemEntrada(this.cells[0].innerHTML, this.cells[2].innerHTML,
+			this.cells[3].innerHTML, this.cells[4].innerHTML);
+	itemEntradaArray.push(itemEntrada);
+	
+});
+	$('#itensEntrada').val(JSON.stringify(itemEntradaArray));
+}
 
 function atualizarId(id) {
 	this.id = id;
@@ -100,7 +126,6 @@ function sendjsonarraytoservlet(){
 
 }
 
-var selected = [];
 
 // var table = $('#tb');
 //

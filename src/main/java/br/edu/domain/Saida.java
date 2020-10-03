@@ -1,13 +1,17 @@
 package br.edu.domain;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -33,6 +37,23 @@ public class Saida implements Serializable{
 	private Double frete;
 	
 	private Double imposto;
+	
+	@OneToMany(mappedBy="saida", cascade= CascadeType.PERSIST)
+	private List<ItemSaida> itensSaida = new ArrayList<>();
+	
+	public Saida() {
+	}
+	
+	public Saida(Loja loja, Transportadora transportadora, Double total, Double frete, Double imposto) {
+		super();
+		this.loja = loja;
+		this.transportadora = transportadora;
+		this.total = total;
+		this.frete = frete;
+		this.imposto = imposto;
+	}
+
+
 
 	public Integer getId() {
 		return id;
@@ -80,6 +101,15 @@ public class Saida implements Serializable{
 
 	public void setImposto(Double imposto) {
 		this.imposto = imposto;
+	}
+	
+
+	public List<ItemSaida> getItensSaida() {
+		return itensSaida;
+	}
+
+	public void setItensSaida(List<ItemSaida> itensSaida) {
+		this.itensSaida = itensSaida;
 	}
 
 	@Override

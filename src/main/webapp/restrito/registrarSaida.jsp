@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; UTF-8"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<c:set var="tituloDaPagina" value="REGISTRAR ENTRADA" scope="request" />
+<c:set var="tituloDaPagina" value="REGISTRAR SAÍDA" scope="request" />
 <c:import url="/restrito/template/cabecalho.jsp" />
 <main>
-<form class="col s12" action="salvarEntrada" method="post" onsubmit="converterTabelaJson()">
+<form class="col s12" action="salvarSaida" method="post" onsubmit="converterTabelaJson()">
 	<div class="row">
 		<c:if test="${!empty param.error}">
 			<div class="alert alert-danger" role="alert">Credenciais
@@ -14,6 +14,14 @@
 	<div class="row">
 		<div class="row">
 			<div class="input-field col s6">
+				<select name="lojaId" required="required">
+					<option value="" disabled selected>Selecione</option>
+					<c:forEach var="loja" items="${lojas}" varStatus="id">
+						<option value="${loja.id}">${loja.nome}</option>
+					</c:forEach>
+				</select> <label>Loja</label>
+			</div>
+			<div class="input-field col s6">
 				<select name="transportadoraId" required="required">
 					<option value="" disabled selected>Selecione</option>
 					<c:forEach var="transportadora" items="${transportadoras}" varStatus="id">
@@ -21,21 +29,8 @@
 					</c:forEach>
 				</select> <label>Transportadora</label>
 			</div>
-			<div class="input-field col s3">
-				<input id="dataPedido" name="dataPedido" type="date"
-					class="validate"> <label for="dataPedido"></label>
-			</div>
-			<div class="input-field col s3">
-				<input id="last_name" name="dataEntrega" type="date"
-					class="validate" placeholder="data">
-			</div>
 		</div>
 		<div class="row">
-			<div class="input-field col s6">
-				<input id="numeroNotaFiscal" name="numeroNotaFiscal" type="number"
-					class="validate"> <label for="numeroNotaFiscal">Número
-					da Nota Fiscal</label>
-			</div>
 			<div class="input-field col s3">
 				<input id="frete" name="frete" type="number" class="validate">
 				<label for="frete">Frete</label>
@@ -44,8 +39,6 @@
 				<input id="imposto" name="imposto" type="number" class="validate">
 				<label for="imposto">Imposto</label>
 			</div>
-		</div>
-		<div class="row">
 			<div class="input-field col s3">
 				<input id="total" name="total" type="number" class="validate">
 				<label for="total">Total</label>

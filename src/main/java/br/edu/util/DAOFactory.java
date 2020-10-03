@@ -6,6 +6,7 @@ import br.edu.dao.IEntradaDAO;
 import br.edu.dao.IFornecedorDAO;
 import br.edu.dao.ILojaDAO;
 import br.edu.dao.IProdutoDAO;
+import br.edu.dao.ISaidaDAO;
 import br.edu.dao.ITransportadoraDAO;
 import br.edu.dao.IUsuarioDAO;
 import br.edu.dao.impl.CategoriaDAO;
@@ -14,9 +15,9 @@ import br.edu.dao.impl.EntradaDAO;
 import br.edu.dao.impl.FornecedorDAO;
 import br.edu.dao.impl.LojaDAO;
 import br.edu.dao.impl.ProdutoDAO;
+import br.edu.dao.impl.SaidaDAO;
 import br.edu.dao.impl.TransportadoraDAO;
 import br.edu.dao.impl.UsuarioDAO;
-import br.edu.domain.Entrada;
 
 public class DAOFactory {
 
@@ -64,6 +65,12 @@ public class DAOFactory {
 	
 	public static IEntradaDAO getEntradaDAO() {
 		EntradaDAO dao = new EntradaDAO();
+		dao.setEntityManager(jpaUtil.getEntityManager());
+		return dao;
+	}
+	
+	public static ISaidaDAO getSaidaDAO() {
+		SaidaDAO dao = new SaidaDAO();
 		dao.setEntityManager(jpaUtil.getEntityManager());
 		return dao;
 	}

@@ -29,7 +29,7 @@ function converterTabelaJson(){
 	itemEntradaArray.push(itemEntrada);
 	
 });
-	$('#itensEntrada').val(JSON.stringify(itemEntradaArray));
+	$('#itens').val(JSON.stringify(itemEntradaArray));
 }
 
 function atualizarId(id) {

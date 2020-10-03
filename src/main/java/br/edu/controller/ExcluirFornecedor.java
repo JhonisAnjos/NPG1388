@@ -12,7 +12,7 @@ import br.edu.dao.IFornecedorDAO;
 import br.edu.domain.Fornecedor;
 import br.edu.util.DAOFactory;
 
-@WebServlet(name = "excluirFornecedor", urlPatterns = { "/excluirFornecedor" })
+@WebServlet(name = "excluirFornecedor", urlPatterns = { "/restrito/excluirFornecedor" })
 public class ExcluirFornecedor extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

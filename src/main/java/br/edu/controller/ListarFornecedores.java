@@ -15,7 +15,7 @@ import br.edu.domain.Fornecedor;
 import br.edu.util.DAOFactory;
 
 
-@WebServlet(name = "listarFornecedores", urlPatterns = { "/listarFornecedores" })
+@WebServlet(name = "listarFornecedores", urlPatterns = { "/restrito/listarFornecedores" })
 public class ListarFornecedores extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

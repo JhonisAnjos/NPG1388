@@ -16,7 +16,7 @@ import br.edu.domain.Fornecedor;
 import br.edu.util.DAOFactory;
 
 
-@WebServlet("/salvarFornecedor")
+@WebServlet("/restrito/salvarFornecedor")
 public class SalvarFornecedor extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -52,7 +52,7 @@ public class SalvarFornecedor extends HttpServlet {
 		fornecedorDAO.salvar(fornecedor);
 		
 		((HttpServletResponse) response)
-		.sendRedirect(((HttpServletRequest) request).getContextPath() + "/listarFornecedores");
+		.sendRedirect(((HttpServletRequest) request).getContextPath() + "/restrito/listarFornecedores");
 		
 	}
 

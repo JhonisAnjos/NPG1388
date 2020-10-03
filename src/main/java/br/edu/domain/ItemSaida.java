@@ -6,6 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -18,8 +20,12 @@ public class ItemSaida implements Serializable{
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
 	
+	@ManyToOne
+	@JoinColumn(name="saida_id")
 	private Saida saida;
 	
+	@ManyToOne
+	@JoinColumn(name="produto_id")
 	private Produto produto;
 	
 	private String lote;
@@ -27,6 +33,21 @@ public class ItemSaida implements Serializable{
 	private Integer quantidade;
 	
 	private Double valor;
+	
+	public ItemSaida() {
+		
+	}
+	
+	public ItemSaida(Saida saida, Produto produto, String lote, Integer quantidade, Double valor) {
+		super();
+		this.saida = saida;
+		this.produto = produto;
+		this.lote = lote;
+		this.quantidade = quantidade;
+		this.valor = valor;
+	}
+
+
 
 	public Integer getId() {
 		return id;

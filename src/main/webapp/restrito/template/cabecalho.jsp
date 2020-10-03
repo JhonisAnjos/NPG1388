@@ -39,7 +39,7 @@
 			</div>
 		</li>
 
-		<li id="dash_dashboard"><a class="waves-effect" href="#!"><b>Página
+		<li id="dash_dashboard"><a class="waves-effect" href="${pageContext.request.contextPath}"><b>Página
 					Principal</b></a></li>
 
 
@@ -56,12 +56,25 @@
 							href="${pageContext.request.contextPath}\restrito\registrarEntrada">Registrar</a></li>
 
 						<li id="users_customer"><a class="waves-effect"
-							style="text-decoration: none;" href="#!">Histórico</a></li>
+							style="text-decoration: none;" href="${pageContext.request.contextPath}\restrito\historicoEntrada">Histórico</a></li>
 					</ul>
 				</div>
 			</li>
+			<li>
+				<div class="collapsible-header waves-effect">
+					<b>Saída</b>
+				</div>
+				<div  class="collapsible-body">
+					<ul>
+						<li><a class="waves-effect"
+							style="text-decoration: none;"
+							href="${pageContext.request.contextPath}\restrito\registrarSaida">Registrar</a></li>
 
-
+						<li ><a class="waves-effect"
+							style="text-decoration: none;" href="${pageContext.request.contextPath}\restrito\historicoSaida">Histórico</a></li>
+					</ul>
+				</div>
+			</li>
 			<li id="dash_users">
 				<div id="dash_users_header" class="collapsible-header waves-effect">
 					<b>Fornecedores</b>
@@ -69,10 +82,10 @@
 				<div id="dash_users_body" class="collapsible-body">
 					<ul>
 						<li id="users_seller"><a class="waves-effect"
-							style="text-decoration: none;" href="cadastrarFornecedor">Cadastrar</a></li>
+							style="text-decoration: none;" href="${pageContext.request.contextPath}\restrito\cadastrarFornecedor">Cadastrar</a></li>
 
 						<li id="users_customer"><a class="waves-effect"
-							style="text-decoration: none;" href="listarFornecedores">Listar</a></li>
+							style="text-decoration: none;" href="${pageContext.request.contextPath}\restrito\listarFornecedores">Listar</a></li>
 					</ul>
 				</div>
 			</li>

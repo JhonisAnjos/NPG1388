@@ -10,61 +10,62 @@
 			<div style="padding: 35px;" align="center" class="card">
 				<div class="row">
 					<div class="left card-title">
-						<b>Gerenciamento de Usuários</b>
+						<b>Entrada</b>
 					</div>
 				</div>
 
 				<div class="row">
-					<a href="#!">
+					<a href="${pageContext.request.contextPath}\restrito\registrarEntrada">
 						<div style="padding: 30px;"
 							class="grey lighten-3 col s5 waves-effect">
-							<i class="indigo-text text-lighten-1 large material-icons">person</i>
-							<span class="indigo-text text-lighten-1"><h5>Seller</h5></span>
+							<i class="indigo-text text-lighten-1 large material-icons">note_add</i>
+							<span class="indigo-text text-lighten-1"><h5>Registrar</h5></span>
 						</div>
 					</a>
 					<div class="col s1">&nbsp;</div>
 					<div class="col s1">&nbsp;</div>
 
-					<a href="#!">
+					<a href="${pageContext.request.contextPath}\restrito\historicoEntrada">
 						<div style="padding: 30px;"
 							class="grey lighten-3 col s5 waves-effect">
-							<i class="indigo-text text-lighten-1 large material-icons">people</i>
-							<span class="indigo-text text-lighten-1"><h5>Customer</h5></span>
+							<i class="indigo-text text-lighten-1 large material-icons">history</i>
+							<span class="indigo-text text-lighten-1"><h5>Histórico</h5></span>
 						</div>
 					</a>
 				</div>
 			</div>
 		</div>
-
 		<div class="col s6">
 			<div style="padding: 35px;" align="center" class="card">
 				<div class="row">
 					<div class="left card-title">
-						<b>Gerenciamento 2(a definir)</b>
+						<b>Saída</b>
 					</div>
 				</div>
+
 				<div class="row">
-					<a href="#!">
+					<a href="${pageContext.request.contextPath}\restrito\registrarSaida">
 						<div style="padding: 30px;"
 							class="grey lighten-3 col s5 waves-effect">
-							<i class="indigo-text text-lighten-1 large material-icons">store</i>
-							<span class="indigo-text text-lighten-1"><h5>Product</h5></span>
+							<i class="indigo-text text-lighten-1 large material-icons">note_add</i>
+							<span class="indigo-text text-lighten-1"><h5>Registrar</h5></span>
 						</div>
 					</a>
-
 					<div class="col s1">&nbsp;</div>
 					<div class="col s1">&nbsp;</div>
 
-					<a href="#!">
+					<a href="${pageContext.request.contextPath}\restrito\historicoSaida">
 						<div style="padding: 30px;"
 							class="grey lighten-3 col s5 waves-effect">
-							<i class="indigo-text text-lighten-1 large material-icons">assignment</i>
-							<span class="indigo-text text-lighten-1"><h5>Orders</h5></span>
+							<i class="indigo-text text-lighten-1 large material-icons">history</i>
+							<span class="indigo-text text-lighten-1"><h5>Histórico</h5></span>
 						</div>
 					</a>
 				</div>
 			</div>
 		</div>
+
+	
 	</div>
 
 	<div class="row">
@@ -72,28 +73,27 @@
 			<div style="padding: 35px;" align="center" class="card">
 				<div class="row">
 					<div class="left card-title">
-						<b>Gerenciamento 3(a definir)</b>
+						<b>Produtos</b>
 					</div>
 				</div>
 
 				<div class="row">
-					<a href="#!">
+					<a href="${pageContext.request.contextPath}\restrito\cadastrarProduto">
 						<div style="padding: 30px;"
 							class="grey lighten-3 col s5 waves-effect">
-							<i class="indigo-text text-lighten-1 large material-icons">local_offer</i>
-							<span class="indigo-text text-lighten-1"><h5>Brand</h5></span>
+							<i class="indigo-text text-lighten-1 large material-icons">note_add</i>
+							<span class="indigo-text text-lighten-1"><h5>Cadastrar</h5></span>
 						</div>
 					</a>
 
 					<div class="col s1">&nbsp;</div>
 					<div class="col s1">&nbsp;</div>
 
-					<a href="#!">
+					<a href="${pageContext.request.contextPath}\restrito\listarProdutos">
 						<div style="padding: 30px;"
 							class="grey lighten-3 col s5 waves-effect">
-							<i class="indigo-text text-lighten-1 large material-icons">loyalty</i>
-							<span class="indigo-text text-lighten-1"><h5>Sub
-									Brand</h5></span>
+							<i class="indigo-text text-lighten-1 large material-icons">list</i>
+							<span class="indigo-text text-lighten-1"><h5>Listar</h5></span>
 						</div>
 					</a>
 				</div>
@@ -104,15 +104,15 @@
 			<div style="padding: 35px;" align="center" class="card">
 				<div class="row">
 					<div class="left card-title">
-						<b>Gerenciamento 4(a definir)</b>
+						<b>Usuários</b>
 					</div>
 				</div>
 				<div class="row">
 					<a href="#!">
 						<div style="padding: 30px;"
 							class="grey lighten-3 col s5 waves-effect">
-							<i class="indigo-text text-lighten-1 large material-icons">view_list</i>
-							<span class="indigo-text text-lighten-1"><h5>Category</h5></span>
+							<i class="indigo-text text-lighten-1 large material-icons">person_add_alt_1</i>
+							<span class="indigo-text text-lighten-1"><h5>Cadastrar</h5></span>
 						</div>
 					</a>
 					<div class="col s1">&nbsp;</div>
@@ -121,9 +121,8 @@
 					<a href="#!">
 						<div style="padding: 30px;"
 							class="grey lighten-3 col s5 waves-effect">
-							<i class="indigo-text text-lighten-1 large material-icons">view_list</i>
-							<span class="truncate indigo-text text-lighten-1"><h5>Sub
-									Category</h5></span>
+							<i class="indigo-text text-lighten-1 large material-icons">list</i>
+							<span class="truncate indigo-text text-lighten-1"><h5>Listar</h5></span>
 						</div>
 					</a>
 				</div>
